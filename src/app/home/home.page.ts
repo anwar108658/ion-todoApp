@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonSegment, IonLabel, IonSegmentButton, IonSegmentContent, IonSegmentView, IonIcon } from '@ionic/angular/standalone';
 import { todoSegment } from '../types';
 import { addIcons } from 'ionicons';
-import { checkmark,timeOutline,todayOutline, warningOutline } from 'ionicons/icons';
+import { checkmark,library,playCircle,radio,search,timeOutline,todayOutline, warningOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,7 @@ import { checkmark,timeOutline,todayOutline, warningOutline } from 'ionicons/ico
 })
 export class HomePage {
   constructor() {
-    addIcons({checkmark,timeOutline,todayOutline,warningOutline})
+    addIcons({checkmark,timeOutline,todayOutline,warningOutline,search,radio,library,playCircle})
   }
   
   todoSegment:todoSegment[]=[

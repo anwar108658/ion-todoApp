@@ -4,7 +4,7 @@
       <img src="../../assets/icon/logo.png" width="55" alt="">
     </ion-title>
   </ion-toolbar>
-  <ion-segment>
+  <ion-segment [scrollable]="true">
     @for (item of todoSegment; track $index) {
       <ion-segment-button [value]="item?.name">
         <ion-icon [color]="item?.color" [name]="item?.icon"></ion-icon>
@@ -15,5 +15,4 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
- 
 </ion-content>
