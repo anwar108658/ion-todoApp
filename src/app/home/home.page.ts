@@ -1,12 +1,24 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonSegment, IonLabel, IonSegmentButton, IonSegmentContent, IonSegmentView, IonIcon } from '@ionic/angular/standalone';
+import { todoSegment } from '../types';
+import { addIcons } from 'ionicons';
+import { checkmark,timeOutline,todayOutline, warningOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [IonHeader, IonTitle, IonContent, IonSegment, IonLabel, IonSegmentButton, IonIcon, IonToolbar],
 })
 export class HomePage {
-  constructor() {}
+  constructor() {
+    addIcons({checkmark,timeOutline,todayOutline,warningOutline})
+  }
+  
+  todoSegment:todoSegment[]=[
+    {id:1,name:"today",value:"Today",icon:"today-outline" ,color:""},
+    {id:2,name:"pending",value:"Pending",icon:"time-outline" ,color:""},
+    {id:3,name:"overdue",value:"Over Due",icon:"warning-outline" ,color:"warning"},
+    {id:4,name:"completed",value:"Completed",icon:"checkmark" ,color:"success"},
+  ]
 }
