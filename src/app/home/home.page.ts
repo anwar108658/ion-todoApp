@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonSegment, IonLabel, IonSegmentButton, IonSegmentContent, IonSegmentView, IonIcon } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonSegment, IonLabel, IonSegmentButton, IonSegmentContent, IonSegmentView, IonIcon, IonFooter } from '@ionic/angular/standalone';
 import { todoSegment } from '../types';
 import { addIcons } from 'ionicons';
 import { checkmark,library,playCircle,radio,search,timeOutline,todayOutline, warningOutline } from 'ionicons/icons';
@@ -8,7 +8,7 @@ import { checkmark,library,playCircle,radio,search,timeOutline,todayOutline, war
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonTitle, IonContent, IonSegment, IonLabel, IonSegmentButton, IonIcon, IonToolbar],
+  imports: [IonHeader, IonContent, IonSegment, IonLabel, IonSegmentButton, IonIcon],
 })
 export class HomePage {
   constructor() {

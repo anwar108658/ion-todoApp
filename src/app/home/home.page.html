@@ -1,9 +1,5 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      <img src="../../assets/icon/logo.png" width="55" alt="">
-    </ion-title>
-  </ion-toolbar>
+
+<ion-content [fullscreen]="true">
   <ion-segment [scrollable]="true">
     @for (item of todoSegment; track $index) {
       <ion-segment-button [value]="item?.name">
@@ -12,7 +8,6 @@
       </ion-segment-button>
     }
   </ion-segment>
-</ion-header>
-
-<ion-content [fullscreen]="true">
 </ion-content>
+
+
