@@ -1,19 +1,26 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonSegment, IonLabel, IonSegmentButton, IonSegmentContent, IonSegmentView, IonIcon, IonFooter } from '@ionic/angular/standalone';
+import { IonContent, IonSegment, IonLabel, IonSegmentButton, IonIcon, IonButton, IonHeader, IonToolbar } from '@ionic/angular/standalone';
 import { todoSegment } from '../types';
-import { addIcons } from 'ionicons';
-import { checkmark,library,playCircle,radio,search,timeOutline,todayOutline, warningOutline } from 'ionicons/icons';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonContent, IonSegment, IonLabel, IonSegmentButton, IonIcon],
+  imports: [IonContent, IonSegment, IonLabel, IonSegmentButton, IonIcon, IonButton, IonHeader, IonToolbar],
 })
 export class HomePage {
-  constructor() {
-    addIcons({checkmark,timeOutline,todayOutline,warningOutline,search,radio,library,playCircle})
-  }
+  public imageSrc: string[] = [''];
+  async takePicture() {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Uri,
+      source:CameraSource.Camera,
+    });
+    const imageUrl = image.webPath;
+    this.imageSrc.push(imageUrl!);
+  };
   
   todoSegment:todoSegment[]=[
     {id:1,name:"today",value:"Today",icon:"today-outline" ,color:""},
