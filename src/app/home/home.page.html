@@ -1,18 +1,12 @@
-
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-segment [scrollable]="true">
-      @for (item of todoSegment; track $index) {
-        <ion-segment-button [value]="item?.name">
-          <ion-icon [color]="item?.color" [name]="item?.icon"></ion-icon>
-          <ion-label>{{item?.value}}</ion-label>
-        </ion-segment-button>
-      }
-    </ion-segment>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
+  <ion-segment [scrollable]="true" >
+    @for (item of todoSegment; track $index) {
+      <ion-segment-button [value]="item?.name">
+        <ion-icon [color]="item?.color" [name]="item?.icon"></ion-icon>
+        <ion-label>{{item?.value}}</ion-label>
+      </ion-segment-button>
+    }
+  </ion-segment>
   <ion-button (click)="takePicture()">take pic</ion-button>
   <div>
     @for (item of imageSrc; track $index) {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonContent, IonSegment, IonLabel, IonSegmentButton, IonIcon, IonButton, IonHeader, IonToolbar } from '@ionic/angular/standalone';
+import { IonContent, IonSegment, IonLabel, IonSegmentButton, IonIcon, IonButton} from '@ionic/angular/standalone';
 import { todoSegment } from '../types';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
@@ -7,7 +7,7 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonContent, IonSegment, IonLabel, IonSegmentButton, IonIcon, IonButton, IonHeader, IonToolbar],
+  imports: [IonContent, IonSegment, IonLabel, IonSegmentButton, IonIcon, IonButton],
 })
 export class HomePage {
   public imageSrc: string[] = [''];
