@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonContent, IonSegment, IonLabel, IonSegmentButton, IonIcon, IonButton} from '@ionic/angular/standalone';
 import { todoSegment } from '../types';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { Capacitor } from '@capacitor/core';
 
 @Component({
   selector: 'app-home',
@@ -12,16 +13,18 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 export class HomePage {
   public imageSrc: string[] = [''];
   async takePicture() {
+    const isWeb = Capacitor.getPlatform() === 'web';
     const image = await Camera.getPhoto({
       quality: 90,
-      allowEditing: true,
       resultType: CameraResultType.Uri,
-      source:CameraSource.Camera,
+      source: isWeb ? CameraSource.Photos : CameraSource.Camera,
+      allowEditing: !isWeb,
     });
-    const imageUrl = image.webPath;
-    this.imageSrc.push(imageUrl!);
-  };
-  
+
+    if (!image.webPath) return;
+    this.imageSrc.push(image.webPath);
+  }
+
   todoSegment:todoSegment[]=[
     {id:1,name:"today",value:"Today",icon:"today-outline" ,color:""},
     {id:2,name:"pending",value:"Pending",icon:"time-outline" ,color:""},
