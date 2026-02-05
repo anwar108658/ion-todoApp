@@ -1,5 +1,7 @@
 /*
  * App Global CSS
+
+ 
  * ----------------------------------------------------------------------------
  * Put style rules here that you want to apply globally. These styles are for
  * the entire app and not just one component. Additionally, this file can be
@@ -8,6 +10,24 @@
  * For more information on global stylesheets, visit the documentation:
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
+
+:root {
+	--ion-color-teal: #12826c;
+	--ion-color-teal-rgb: 18,130,108;
+	--ion-color-teal-contrast: #ffffff;
+	--ion-color-teal-contrast-rgb: 255,255,255;
+	--ion-color-teal-shade: #10725f;
+	--ion-color-teal-tint: #2a8f7b;
+}
+
+.ion-color-teal {
+	--ion-color-base: var(--ion-color-teal);
+	--ion-color-base-rgb: var(--ion-color-teal-rgb);
+	--ion-color-contrast: var(--ion-color-teal-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-teal-contrast-rgb);
+	--ion-color-shade: var(--ion-color-teal-shade);
+	--ion-color-tint: var(--ion-color-teal-tint);
+}
 
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
