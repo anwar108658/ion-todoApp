@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet, IonFooter, IonHeader, IonTabs, IonTabBar, IonTabButton, IonIcon, IonTab, IonToolbar, IonTitle, IonContent, IonLabel } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { add, checkmark, home, library, playCircle, radio, search, timeOutline, todayOutline, trendingUp, warningOutline } from 'ionicons/icons';
+import { add, checkmark, home, image, library, playCircle, radio, search, timeOutline, todayOutline, trendingUp, warningOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,6 @@ import { add, checkmark, home, library, playCircle, radio, search, timeOutline, 
 })
 export class AppComponent {
   constructor() {
-    addIcons({trendingUp,add,home,checkmark,timeOutline,todayOutline,warningOutline,search,radio,library,playCircle})
+    addIcons({image,trendingUp,add,home,checkmark,timeOutline,todayOutline,warningOutline,search,radio,library,playCircle})
   }
 }
