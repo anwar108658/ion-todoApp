@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { IonContent, IonSegment, IonLabel, IonSegmentButton, IonIcon, IonButton, IonFab, IonFabButton, IonModal, IonHeader, IonToolbar, IonButtons, IonTitle, IonItem, IonInput, IonDatetime, IonDatetimeButton, IonList, IonSelect, IonSelectOption, IonTextarea } from '@ionic/angular/standalone';
 import { todoSegment } from '../types';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators, ɵInternalFormsSharedModule } from '@angular/forms';
@@ -11,6 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators, ɵInternalForm
 })
 export class HomePage {
   todoForm:any;
+  date:any;
   todoSegment:todoSegment[]=[
     {id:1,name:"today",value:"Today",icon:"today-outline" ,color:"secondary"},
     {id:2,name:"pending",value:"Pending",icon:"time-outline" ,color:"tertiary"},
@@ -20,10 +21,13 @@ export class HomePage {
   ngOnInit(){
     this.todoForm=new FormGroup({
       task:new FormControl('',[Validators.required]),
-      dueDate:new FormControl(Date.now().toString(),[]),
+      dueDate:new FormControl(null),
       priority:new FormControl('',[Validators.required]),
       comment:new FormControl('',[]),
     })
+  }
+  getTask(){
+    console.log(this.todoForm.value)
   }
   
 }

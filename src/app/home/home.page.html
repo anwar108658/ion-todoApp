@@ -27,12 +27,12 @@
           </ion-buttons>
           <ion-title style="text-align: center;">Task Form</ion-title>
           <ion-buttons slot="end">
-            <ion-button color="success" [strong]="true">Confirm</ion-button>
+            <ion-button color="success" (click)="getTask()" [strong]="true">Confirm</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <form [formGroup]="todoForm" >
+        <form [formGroup]="todoForm">
           <ion-list lines="inset">
             <ion-item lines="inset">
               <ion-input
@@ -50,6 +50,7 @@
                   <ion-datetime
                     id="datetime"
                     presentation="date"
+                    formControlName="dueDate"
                     [formatOptions]="{
                       date: {
                         weekday: 'short',
